@@ -69,9 +69,6 @@ To show up the tasks in CardBoard, you have to create couple of **Tag boards** w
 
 ![cb_who](https://user-images.githubusercontent.com/40318953/214409660-022a6503-67b4-4312-a4b3-e85a4817a540.png)
 
-
-
-
 To show tasks based on due date, you have to create a **Date Board**.
 1. When
 
@@ -89,7 +86,7 @@ Create folders
 ```
 
 ### Folder 0 Templates
-Copy templates and DvCharts.js into the template folder 
+Copy templates 'Daily Log.md', 'Weekly Jounral.md' and 'DvCharts.js' into the template folder 
 
 ![folder_0 Template_structure](https://user-images.githubusercontent.com/40318953/214386222-6ead6a56-8686-4438-81ed-5eb01828699d.png)
 
