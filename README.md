@@ -86,7 +86,7 @@ Create folders
 ```
 
 ### Folder 0 Templates
-Copy templates 'Daily Log.md', 'Weekly Jounral.md' and 'DvCharts.js' into the template folder 
+Copy templates 'Daily Log.md', 'Weekly Journal.md' and 'DvCharts.js' into the template folder 
 
 ![folder_0 Template_structure](https://user-images.githubusercontent.com/40318953/214386222-6ead6a56-8686-4438-81ed-5eb01828699d.png)
 
