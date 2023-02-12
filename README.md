@@ -100,6 +100,8 @@ Folder: ```01 Personal Note/0 Templates```
 
 Enable **JavaScript Queries**
 
+Disable **Warn on Empty Result**
+
 Data Format: ```yyyy-MM-dd```
 
 Date + Time Format: ```yyy-MM-dd @ h:mm```
