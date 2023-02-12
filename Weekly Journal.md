@@ -1,20 +1,22 @@
 ---
 tags:
  - "#calendar/weekly/<% tp.date.now('YYYY') %>"
+Created:: [[<% tp.date.now('YYYY-MM-DD') %>]] <% tp.date.now('HH:mm') %>
+Updated:: <% tp.date.now('YYYY-MM-DD HH:mm') %>
+ID:: <% tp.date.now('YYYYMMDDHHmmss') %>
+
 ---
 
 # <% tp.date.now("YYYY-MM [Week] WW") %>
 
 [[01 Personal Note/<% tp.date.now("YYYY[/Weekly/]YYYY-MM [Week] WW", -7) %>|↶ Previous Week]] | [[01 Personal Note/<% tp.date.now("YYYY[/Weekly/]YYYY-MM [Week] WW", 7) %>|Following Week ↷]]
 
-> [!METADATA]-
-> Created:: [[<% tp.date.now('YYYY-MM-DD') %>]] <% tp.date.now('HH:mm') %>
-> Updated:: <% tp.date.now('YYYY-MM-DD HH:mm') %>
-> ID:: <% tp.date.now('YYYYMMDDHHmmss') %>
 
 ###### Table of Contents:
 ```toc
 style: number
+min_depth: 1
+max_depth: 3
 ```
 
 ___
@@ -51,24 +53,24 @@ ___
 - [[<% tp.date.weekday("YYYY-MM-DD", 7) %>|Sunday]]
 	![[<% tp.date.weekday("YYYY-MM-DD", 7) %>#^work-link]] 
 
+## ToDo
+
+- [x] Heizung in Lank prüfen #kb/todo #project/lank #who/markus ✅ 2023-02-04
+
 ## Overview
 ### Week Statistics
 ```dataviewjs
 const daysPath = dv.current().file.folder;
 
 const attributes = {
-	'money-spent': {
-		label: 'Money Spent',
-		average: 100,
-	},
 	'bloodpressure_sys': {
-		label: '🩸🔺',
+		label: '📈',
 		backgroundColor: 'rgba(85, 174, 229, 0.2)',
 		borderColor: 'rgba(85, 174, 229, 1)',
 		average: 100,
 	},
 	'bloodpressure_dia': {
-		label: '🩸🔻',
+		label: '📉',
 		backgroundColor: 'rgba(20, 85, 182, 0.2)',
 		borderColor: 'rgba(20, 85, 182, 1)',
 		average: 100,
@@ -79,6 +81,12 @@ const attributes = {
 		borderColor: 'rgba(255, 211, 101, 1)',
 		average: 100,
 	},
+	'bloodpressure_pp': {
+		label: '🩸',
+		backgroundColor: 'rgba(255, 211, 101, 0.2)',
+		borderColor: 'rgba(255, 211, 101, 1)',
+		average: 100,
+	}, 
 	'steps': {
 		label: 'Steps',
 		backgroundColor: 'rgba(141, 82, 188, 0.2)',
@@ -98,7 +106,7 @@ const date = "<% tp.date.now('YYYY-MM-DD') %>";
 customJS.DvCharts.renderWeeklyChart({
 	dv,
 	context: this,
-	daysPath: '01 Personal Note/<% tp.date.now("YYYY") %>/Daily/<% tp.date.now("MM MMMM") %>',
+	daysPath: '01 Personal Note/<% tp.date.now("YYYY") %>/Daily',
 	attributes,
 	type: 'average',
 	date
@@ -108,10 +116,10 @@ customJS.DvCharts.renderWeeklyChart({
 ```dataview
 TABLE WITHOUT ID
 	link(file.name) as "Day",
-	money-spent AS "💸",
-	bloodpressure_sys AS "🩸🔺",
-	bloodpressure_dia AS "🩸🔻",
+	bloodpressure_sys AS "📈",
+	bloodpressure_dia AS "📉",
 	pulse AS "💗",
+	bloodpressure_pp AS "🩸",
 	steps AS "👣",
 	hours-worked AS "🧰"
 FROM "01 Personal Note"
@@ -123,13 +131,10 @@ SORT file.name ASC
 ```dataview
 TABLE WITHOUT ID
 	file.link AS "Day",
-	social AS "🤙",
 	water AS "🍶",
 	drinks AS "🍷",
 	workout AS "🏋️",
-	walking AS "🚶‍♂️",
-	lecture AS "📑",
-	shower AS "🚿"
+	lecture AS "📑"
 FROM "01 Personal Note"
 WHERE week = [[<% tp.date.now("YYYY [Week] WW") %>]]
 SORT file.name ASC
